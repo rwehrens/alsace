@@ -3,14 +3,22 @@
 ## statistics that for larger datasets take too long to be done in the
 ## summary.ALS function
 
-doALS <- function(Xl, PureS, maxiter = 100) {
+doALS <- function(Xl, PureS, maxiter = 100, verbose = FALSE) {
   Cini <- lapply(Xl, function(xl) xl[,1:ncol(PureS)])
-  
-  capture.output(result <- als(PsiList = Xl, CList = Cini, S = PureS,
+
+  if (verbose) {
+    result <- als(PsiList = Xl, CList = Cini, S = PureS,
                                maxiter = maxiter, normS = .5,
                                nonnegS = TRUE, optS1st = FALSE,
                                nonnegC = TRUE, uniC = FALSE,
-                               baseline = FALSE) )
+                  baseline = FALSE)
+  } else {
+    capture.output(result <- als(PsiList = Xl, CList = Cini, S = PureS,
+                                 maxiter = maxiter, normS = .5,
+                                 nonnegS = TRUE, optS1st = FALSE,
+                                 nonnegC = TRUE, uniC = FALSE,
+                                 baseline = FALSE))
+  }
 
   colnames(result$S) <- paste("Component", 1:ncol(PureS))
   for (i in 1:length(result$CList))

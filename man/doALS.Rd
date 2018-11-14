@@ -10,7 +10,7 @@
   package, providing a simple interface with sensible defaults for
   hyphenated data.}
 \usage{
-doALS(Xl, PureS, maxiter = 100)
+doALS(Xl, PureS, maxiter = 100, verbose)
 \method{print}{ALS}(x, \dots)
 \method{summary}{ALS}(object, \dots)
 \method{plot}{ALS}(x, what = c("spectra", "profiles"), showWindows = TRUE,
@@ -24,6 +24,7 @@ getWavelength(x)
   \item{x, object}{an object of class ALS.}
   \item{PureS}{Initial estimates of pure spectral components.}
   \item{maxiter}{maximum number of iterations in ALS.}
+  \item{verbose}{show \code{als} feedback during optimisation.}
   \item{what}{Show spectra or elution profiles}
   \item{showWindows}{If showing elution profiles, the window borders and
     the overlap areas between the windows can be shown (by
