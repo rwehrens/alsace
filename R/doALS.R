@@ -104,17 +104,21 @@ plot.ALS <- function(x,
 }
 
 getTime <- function(x) {
-  if (is.null(rownames(x[[1]][[1]]))) {
+  suppressWarnings(times <- as.numeric(rownames(x[[1]][[1]])))
+
+  if (length(times) == 0 | all(is.na(times))) {
     1:nrow(x[[1]][[1]])
   } else {
-    as.numeric(rownames(x[[1]][[1]]))
+    times
   }
 }
 
 getWavelength <- function(x) {
-  if (is.null(rownames(x$S))) {
+  suppressWarnings(lambdas <- as.numeric(rownames(x$S)))
+  
+  if (length(lambdas) == 0 | all(is.na(lambdas))) {
     1:nrow(x$S)
   } else {
-    as.numeric(rownames(x$S))
+    lambdas
   }
 }
