@@ -38,7 +38,7 @@ showALSresult <- function(xals,
          conc = layout(matrix(c(1:nplot, nplot+1:nplot),
              2, nplot, byrow = TRUE),
              heights = c(PureChght, 1)),
-         none = layout(matrix(1:nplot, nrow = 1))
+         none = layout(matrix(1:(nplot + show.img), nrow = 1))
          )
   
   if (!is.list(tp))
@@ -47,9 +47,9 @@ showALSresult <- function(xals,
   ## Titles may be given only for the plots shown, of for the
   ## whole plot sequence 
   if (missing(titles))
-      titles <- names(xals$CList)
+    titles <- names(xals$CList)
   if (length(titles) != nplot & length(titles) != length(xlst)) 
-      stop("Invalid titles vector")
+    stop("Invalid titles vector")
   if (length(titles) == nplot) {
     titles.tmp <- rep("", length(xlst))
     titles.tmp[mat.idx] <- titles

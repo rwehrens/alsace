@@ -17,7 +17,8 @@ showALSresult(xals, xlst,
               show.img = TRUE)
 }
 \arguments{
-  \item{xals}{The fitted ALS object.}
+  \item{xals}{The fitted ALS object. Not needed if \code{plotPureC}
+    equals \code{"none"}: in that case only the data are shown.}
   \item{xlst}{The data: the list of matrices on which the ALS object is
     based.}
   \item{tp}{Optional vector of time points. If missing, will be
