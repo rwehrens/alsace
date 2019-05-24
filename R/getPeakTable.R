@@ -72,8 +72,7 @@ getPeakTable <- function(peakList, response = c("area", "height"),
     }
 
     if (max(clusCount <- table(file.idx, pkcenters.cl)) > 1) 
-        cat(paste("Warning!",
-                  "More than one peak of one injection in the same cluster",
+        warning(paste("More than one peak of one injection in the same cluster",
                   paste("for component ", comp, ".", sep = ""),
                   "Keeping only the most intense one.",
                   "", sep = "\n"))
