@@ -1,3 +1,6 @@
+Version 1.22.1
+  * replaced two calls to 'class' to 'inherits'
+
 Version 1.19.1
   * more robust versions of getTime and getWavelength
 

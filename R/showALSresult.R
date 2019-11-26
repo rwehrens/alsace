@@ -120,7 +120,7 @@ showALSresult <- function(xals,
   if (annotation) {
     par(mar = c(1, 1, 1, 1), ann = FALSE, bty = "n", xaxt = "n",
         yaxt = "n", xaxs = "i", yaxs = "i", xpd = NA)
-    if (class(annotation) == "character") {
+    if (inherits(annotation, "character")) {
       plot(1:10, type = "n", axes = FALSE)
       text(5, 5, annotation, adj = c(.5, .5), cex = 1.5)
     } else {

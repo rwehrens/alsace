@@ -3,7 +3,7 @@
 mergeTimeWindows <- function(obj, simSThreshold = .9, simCThreshold = .9,
                              verbose = FALSE)
 {
-  if (class(obj[[1]]) == "ALS") {
+  if (inherits(obj[[1]], "ALS")) {
     overlap <- sum(rownames(obj[[1]]$CList[[1]]) %in%
                    rownames(obj[[2]]$CList[[1]])) / 2
     
