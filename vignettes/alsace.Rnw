@@ -1,5 +1,5 @@
 \documentclass[a4paper]{article}
-%\VignetteEngine{knitr::knitr_notangle}
+%\VignetteEngine{knitr::knitr}
 %\VignetteIndexEntry{alsace}
 
 \usepackage{hyperref}
